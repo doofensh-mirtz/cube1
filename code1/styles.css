@@ -143,7 +143,7 @@ section img {
     max-width: 100%;
     height: auto;
 }
-#step1, #step2, #step3, #step4, #step5{
+#step1, #step2, #step3, #step4{
     padding-bottom: 20px;
     border-bottom: 3px solid #808080;
     margin-bottom: 20px;
