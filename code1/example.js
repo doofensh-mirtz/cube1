@@ -1,3 +1,4 @@
+
 // Function to filter gallery images based on selected cube type
 // Function to open dialog
 function openDialog(dialogId) {
@@ -130,4 +131,19 @@ window.onclick = function(event) {
         closeSolveDialog();
     }
 };
+let lastScrollTop = 0;
+  const header = document.querySelector("header");
 
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → Hide header (z-index: -1)
+      header.classList.add("hidden");
+    } else {
+      // Scrolling up → Show header (z-index: 1000)
+      header.classList.remove("hidden");
+    }
+
+    lastScrollTop = scrollTop;
+  });
