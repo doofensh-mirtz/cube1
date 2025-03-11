@@ -24,3 +24,19 @@ window.onclick = function(event) {
     }
 };
 
+let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → Hide header (z-index: -1)
+      header.classList.add("hidden");
+    } else {
+      // Scrolling up → Show header (z-index: 1000)
+      header.classList.remove("hidden");
+    }
+
+    lastScrollTop = scrollTop;
+  });
